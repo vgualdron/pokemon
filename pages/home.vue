@@ -5,7 +5,7 @@
     </div>
     <div v-if="items && items.length > 0" class="container">
       <ListItems :items="items"/>
-      <div v-if="pokemons.next" class="see-more">
+      <div v-if="pokemons.next && showFavorites === false" class="see-more">
         <SeeMore />
       </div>
     </div>
@@ -36,21 +36,22 @@ export default {
   },
   data () {
     return {
-      showFavorites: false
     };
   },
   computed: {
     ...mapState('pokemon', [
       'search',
       'pokemons',
-      'filteredPokemons'
+      'showFavorites'
     ]),
     items: {
       get () {
         let array = [];
         if (this.pokemons && this.pokemons.results) {
           if (this.showFavorites) {
-            array = this.pokemons.results;
+            array = this.pokemons.results.filter((item) => {
+              return item.favorite === true;
+            });
           } else {
             array = this.pokemons.results;
           }

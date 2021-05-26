@@ -21,6 +21,12 @@ const actions = {
   },
   setSearch ({ commit }, data) {
     commit('SET_SEARCH', data);
+  },
+  setPokemons ({ commit }, data) {
+    commit('SET_POKEMONS', data);
+  },
+  setShowFavorites ({ commit }, data) {
+    commit('SET_SHOW_FAVORITES', data);
   }
 };
 export default actions;
