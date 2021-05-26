@@ -221,7 +221,6 @@ h6.subtitle {
 }
 
 .loader .reel {
-    position: absolute;
     width: 50px;
     height: 50px;
     border: 1px solid #777;
