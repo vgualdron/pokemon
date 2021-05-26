@@ -1,4 +1,4 @@
 const state = {
-  token: null
+  loader: false
 };
 export default state;
