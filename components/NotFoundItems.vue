@@ -7,7 +7,7 @@
       You look lost on your journey!
     </h6>
     <div class="link-get-started">
-      <b-button pill variant="danger" @click="clearSearch">Go back hom</b-button>
+      <b-button pill variant="danger" @click="clearSearch">Go back home</b-button>
     </div>
   </div>
 </template>
