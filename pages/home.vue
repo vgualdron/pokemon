@@ -13,7 +13,10 @@
       <NotFoundItems />
     </div>
     <div>
-      <NavbarFixedBottom />
+      <NavbarFixedBottom :disabledFavorites="disabledFavorites"/>
+    </div>
+    <div>
+      <ModalDetailPokemon />
     </div>
   </div>
 </template>
@@ -25,6 +28,7 @@ import ListItems from '../components/ListItems';
 import NotFoundItems from '../components/NotFoundItems';
 import NavbarFixedBottom from '../components/NavbarFixedBottom';
 import SeeMore from '../components/SeeMore';
+import ModalDetailPokemon from '../components/ModalDetailPokemon';
 export default {
   name: 'Home',
   components: {
@@ -32,7 +36,8 @@ export default {
     ListItems,
     NotFoundItems,
     NavbarFixedBottom,
-    SeeMore
+    SeeMore,
+    ModalDetailPokemon
   },
   data () {
     return {
@@ -57,12 +62,21 @@ export default {
           }
         }
         return array.filter((item) => {
-          return item.name.includes(this.search);
+          return item.name.toLowerCase().includes(this.search.toLowerCase());
         });
       },
       set (newValue) {
         return newValue;
       }
+    },
+    disabledFavorites () {
+      let array = [];
+      if (this.pokemons && this.pokemons.results) {
+        array = this.pokemons.results.filter((item) => {
+          return item.favorite === true;
+        });
+      }
+      return array.length <= 0;
     }
   },
   async mounted () {

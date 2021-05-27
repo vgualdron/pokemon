@@ -4,7 +4,7 @@
       <b-button pill :variant="!showFavorites ? 'danger' : ''" class="my-2 my-sm-0 all" @click="setFavorites(false)">
         <b-icon-list-ul></b-icon-list-ul> All
       </b-button>
-      <b-button pill :variant="showFavorites ? 'danger' : ''" class="my-2 my-sm-0" @click="setFavorites(true)">
+      <b-button pill :variant="showFavorites ? 'danger' : ''" class="my-2 my-sm-0" @click="setFavorites(true)" :disabled="disabledFavorites">
         <b-icon-star-fill></b-icon-star-fill> Favorites
       </b-button>
     </b-nav-form>
@@ -24,13 +24,17 @@ export default {
       show: true
     };
   },
+  props: {
+    disabledFavorites: {
+      type: Boolean,
+      default: true
+    }
+  },
   computed: {
     ...mapState('pokemon', [
       'pokemons',
       'showFavorites'
     ])
-  },
-  async mounted () {
   },
   methods: {
     ...mapActions('pokemon', [

@@ -25,8 +25,22 @@ const actions = {
   setPokemons ({ commit }, data) {
     commit('SET_POKEMONS', data);
   },
+  setPokemon ({ commit }, data) {
+    commit('SET_POKEMON', data);
+  },
+  async getPokemon ({ commit }, { name, isFavorite }) {
+    await commonHelper.delay(500);
+    await pokemonApi.findByName(name).then((res) => {
+      const data = res.data;
+      data.favorite = isFavorite;
+      commit('SET_POKEMON', data);
+    });
+  },
   setShowFavorites ({ commit }, data) {
     commit('SET_SHOW_FAVORITES', data);
+  },
+  setShowModalPokemon ({ commit }, data) {
+    commit('SET_SHOW_MODAL_POKEMON', data);
   }
 };
 export default actions;

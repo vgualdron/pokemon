@@ -1,6 +1,8 @@
 const state = {
   search: '',
   pokemons: {},
-  showFavorites: false
+  pokemon: {},
+  showFavorites: false,
+  showModalPokemon: false
 };
 export default state;
