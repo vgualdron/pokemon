@@ -210,22 +210,23 @@ h6.subtitle {
     display: none;
 }
 
-.modal-body > p {
+.modal-body > .data.btn-share > p {
     float: right;
     margin-bottom: 0rem;
     width: 44px;
     height: 44px;
     background-color: #F5F5F5;
     border-radius: 50%;
-    margin-right: 26px;
+    margin-right: 0px;
     cursor: pointer;
-    margin-top: 17px;
+    margin-top: -2px;
 }
+
 
 header.modal-header > button.close {
     z-index: 1;
-    margin: 12px -3px;
-    padding: 4px;
+    margin: 14px 0px;
+    padding: 0px;
     width: 26px;
     height: 26px;
     color: #79c9f9;
@@ -233,8 +234,8 @@ header.modal-header > button.close {
     opacity: 1;
     border-radius: 50%;
     font-weight: bold;
-    line-height: 15px;
-    font-size: 25px;
+    line-height: 0px;
+    font-size: 24px;
     text-align: center;
 }
 
@@ -270,14 +271,15 @@ header.modal-header > button.close {
 }
 
 .data.btn-share {
-    margin-top: 20px;
-    margin-bottom: 20px;
     border-bottom: none;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
     line-height: 22px;
     display: inline-block;
+    width: 100%;
+    margin: 0px;
+    padding: 30px;
 }
 
 @keyframes spin {
@@ -342,7 +344,12 @@ header.modal-header > button.close {
     border: none;
     border-radius: 50%;
     display: inline-block;
-    margin-top: 30%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    margin: auto;
 }
 
 .loader .spin {
@@ -373,7 +380,6 @@ header.modal-header > button.close {
 }
 
 .name-item > h5 {
-    left: 20px;
     top: calc(50% - 26px/2);
     font-family: Lato;
     font-style: normal;
@@ -382,7 +388,7 @@ header.modal-header > button.close {
     line-height: 44px;
     align-items: center;
     color: #353535;
-    width: 75%;
+    width: calc(100% - 100px);
     height: 44px;
     display: inline-block;
     margin-bottom: 0px;
@@ -397,7 +403,7 @@ header.modal-header > button.close {
     height: 44px;
     background-color: #F5F5F5;
     border-radius: 50%;
-    margin-right: 9px;
+    margin-right: 20px;
     cursor: pointer;
 }
 
@@ -435,6 +441,9 @@ header.modal-header > button.close {
 @media (max-width: 575.98px) and (orientation:portrait) {
     h6.subtitle {
         width: 250px;
+    }
+    .modal-dialog {
+        margin: 1.3rem;
     }
  }
 /*landscape*/

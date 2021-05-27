@@ -16,15 +16,9 @@
 <script>
 import ImageWelcome from '../components/ImageWelcome';
 export default {
-  name: 'Home',
+  name: 'Welcome',
   components: {
     ImageWelcome
-  },
-  data () {
-    return {
-    };
-  },
-  async mounted () {
   },
   methods: {
     getStarted (event) {

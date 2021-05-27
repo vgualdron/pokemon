@@ -14,14 +14,6 @@
 <script>
 import { mapActions } from 'vuex';
 export default {
-  data () {
-    return {
-    };
-  },
-  computed: {
-  },
-  async mounted () {
-  },
   methods: {
     ...mapActions('pokemon', [
       'setSearch'

@@ -14,10 +14,6 @@ export default {
   components: {
     BIconSearch
   },
-  data () {
-    return {
-    };
-  },
   computed: {
     ...mapState('pokemon', [
       'search'

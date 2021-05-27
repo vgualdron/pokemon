@@ -1,10 +1,10 @@
 <template>
   <b-navbar-nav class="navbar-fixed-bottom">
     <b-nav-form>
-      <b-button pill :variant="!showFavorites ? 'danger' : ''" class="my-2 my-sm-0 all" @click="setFavorites(false)">
+      <b-button pill :variant="!showFavorites ? 'danger' : ''" class="my-sm-0 all" @click="setFavorites(false)">
         <b-icon-list-ul></b-icon-list-ul> All
       </b-button>
-      <b-button pill :variant="showFavorites ? 'danger' : ''" class="my-2 my-sm-0" @click="setFavorites(true)" :disabled="disabledFavorites">
+      <b-button pill :variant="showFavorites ? 'danger' : ''" class="my-sm-0" @click="setFavorites(true)" :disabled="disabledFavorites">
         <b-icon-star-fill></b-icon-star-fill> Favorites
       </b-button>
     </b-nav-form>

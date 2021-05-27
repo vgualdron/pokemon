@@ -19,10 +19,6 @@ export default {
   components: {
     BIconStarFill
   },
-  data () {
-    return {
-    };
-  },
   computed: {
     ...mapState('pokemon', [
       'pokemons',

@@ -21,14 +21,14 @@
           <h3>Types:</h3>
           <p> {{ getTypes(pokemon.types) }} </p>
         </div>
-        <div class="data btn-share" v-if="pokemon && pokemon.types">
-          <b-button pill variant="danger" class="my-2 my-sm-0" @click="copy(pokemon)">
+        <div class="data btn-share">
+          <b-button pill variant="danger" class="my-sm-0" @click="copy(pokemon)">
             Share to my friends
           </b-button>
+          <p @click="check(pokemon)">
+            <b-icon-star-fill :class="pokemon.favorite ? 'icon-star-list check' : 'icon-star-list'"></b-icon-star-fill>
+          </p>
         </div>
-        <p @click="check(pokemon)">
-          <b-icon-star-fill :class="pokemon.favorite ? 'icon-star-list check' : 'icon-star-list'"></b-icon-star-fill>
-        </p>
     </b-modal>
   </div>
 </template>
@@ -38,9 +38,6 @@ import { BIconStarFill } from 'bootstrap-vue';
 export default {
   components: {
     BIconStarFill
-  },
-  data () {
-    return {};
   },
   computed: {
     ...mapState('pokemon', [

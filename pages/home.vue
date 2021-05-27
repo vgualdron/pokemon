@@ -20,7 +20,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import { mapState, mapActions } from 'vuex';
 import InputSearch from '../components/InputSearch';
@@ -39,9 +38,12 @@ export default {
     SeeMore,
     ModalDetailPokemon
   },
-  data () {
-    return {
-    };
+  watch: {
+    disabledFavorites (newValue) {
+      if (newValue) {
+        this.setShowFavorites(false);
+      }
+    }
   },
   computed: {
     ...mapState('pokemon', [
@@ -86,7 +88,8 @@ export default {
   },
   methods: {
     ...mapActions('pokemon', [
-      'findAll'
+      'findAll',
+      'setShowFavorites'
     ]),
     ...mapActions('common', [
       'setLoader'
