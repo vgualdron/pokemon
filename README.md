@@ -1,5 +1,11 @@
 # pokemon
 
+## Tecnologías usadas
+* Vuejs
+* Nuxt
+* Bootstrap vue
+* Vuex
+
 ## Build Setup
 
 ```bash
